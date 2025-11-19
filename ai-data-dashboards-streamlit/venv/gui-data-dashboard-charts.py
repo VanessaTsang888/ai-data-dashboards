@@ -1,5 +1,6 @@
 #Build with AI: AI-Powered Dashboards with Streamlit 
 #Build a Simple Dashboard in Streamlit with Sample Data to visualise our data.
+#Add a Chat Widget to Your App UI
 
 #Import packages
 import streamlit as st
