@@ -18,7 +18,7 @@ The small embedding model (text-embedding-3-small) from the [OpenAI Platform](ht
 - Navigate to the directory
 - Run `pip install -r requirements.txt` to install dependencies
 - Run
-  - `streamlit run gui` # to run the file. Browser will launch in the URL: http://localhost:8501/
+  - `streamlit run gui.py` # to run the file. Browser will launch in the URL: http://localhost:8501/
 
 ## Dependencies
 
