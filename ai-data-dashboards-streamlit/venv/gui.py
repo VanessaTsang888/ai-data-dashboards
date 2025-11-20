@@ -1,7 +1,8 @@
-#Build with AI: AI-Powered Dashboards with Streamlit 
-#Build a Simple Dashboard in Streamlit with Sample Data to visualise our data.
-#Add a Chat Widget to Your App UI
-#Render and Run AI-Generated Code Inside Your App
+# Build with AI: AI-Powered Dashboards with Streamlit 
+# Build a Simple Dashboard in Streamlit with Sample Data to visualise our data.
+# Add a Chat Widget to Your App UI
+# Render and Run AI-Generated Code Inside Your App.
+# Handle Errors and Provide User Feedback in Your App
 
 #Import packages
 import streamlit as st
@@ -22,7 +23,7 @@ client = OpenAI(api_key=my_api_key)
 st.set_page_config(page_title="Iris Dashboard", layout="wide")
 
 #Write title
-st.title("Run AI-Generated Code")
+st.title("Error Handling")
 
 #Load Iris dataset
 iris = load_iris()
@@ -75,9 +76,12 @@ if st.button("Send", key="ui_send"):
             reply = response.choices[0].message.content
             #Add AI assistant's reply to chat history
             st.session_state.chat_history.append({"role":"assistant","content":reply})
-        except Exception as e:
-            #Handle API errors and add to chat history
-            st.session_state.chat_history.append(f"Bot: Error - {e}")
+        except Exception as api_err:
+            # Display API error
+            st.error(f"OpenAI API error: {api_err}")
+            # Add API error to chat history
+            st.session_state.chat_history.append({"role": "assistant", "content": f"API error: {api_err}"})
+            reply = None
         if reply:
             #Check if the assistant's reply starts with Python code block marker (```python)
             if reply.strip().startswith("```python"):
@@ -103,18 +107,40 @@ if st.button("Send", key="ui_send"):
                     st.subheader("Execution Result")
                     #Display code result
                     st.write(result)
-                except Exception as e:
-                    #Display error message if an error occurs during code execution
-                    st.error(f"Error executing code: {e}")
+
+                    # Add success message to chat history
+                    st.session_state.chat_history.append({"role": "assistant", "content": "Code executed successfully!"})
+
+
+                except Exception as exec_err:
+                    # Display error message if an error occurs during code execution
+                    st.error(f"Error executing code: {exec_err}")
+                    # Add code execution error to chat history
+                    st.session_state.chat_history.append({"role": "assistant", "content": f"Execution error: {exec_err}"})
+
             else:
-                #Display result
+                # Display result
                 st.subheader("Answer")
                 st.write(reply)
+                # Add success message to chat history
+                st.session_state.chat_history.append({"role": "assistant", "content": "Answer delivered without code"})
 
-st.subheader("Chat Window")
-#Loop through the chat history stored in session state and display each message
+
+st.subheader("Feedback History")
+# Loop through the chat history stored in session state and display each message
 for message in st.session_state.chat_history:
-    st.write(message)
+    role = message.get("role", "")
+    content = message.get("content", "")
+
+    # Check if message is from assistant and display as info box
+    if role == "assistant":
+        st.info(f"**Bot:** {content}")
+    # Check if message is from user and display as info box
+    elif role == "user":
+        st.write(f"**You:** {content}")
+    # Otherwise display message as regular text
+    else:
+        st.write(content)
     
 #Filter DataFrame
 filtered_df = df[df["species"].isin(species_options)]
