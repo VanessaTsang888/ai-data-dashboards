@@ -2,6 +2,10 @@
 
 The objective of this personal AI development project is to learn to use AI tech with Python programming to build an AI-Powered interactive Data Dashboard Website Application to best visualise a range of different types of data.
 
+Digital Accessibility:
+
+The 'tooltip' feature on each plot within the scatter plot visulisation graph is for both accessibility and makes this graph more interactive. To use this feature, the user with reduced vision problem simply hover their cursor over a plot and a pop-up panel will appear for them to read the details of the plot in plain text.
+
 ## Requirements
 
 Install Python 3.12
@@ -14,7 +18,7 @@ The small embedding model (text-embedding-3-small) from the [OpenAI Platform](ht
 - Navigate to the directory
 - Run `pip install -r requirements.txt` to install dependencies
 - Run
-  - `streamlit run gui-data-dashboard.py` # to run the file. Browser will launch in the URL: http://localhost:8501/
+  - `streamlit run gui` # to run the file. Browser will launch in the URL: http://localhost:8501/
 
 ## Dependencies
 
