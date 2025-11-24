@@ -55,7 +55,7 @@ First take a look at the data within filtering table and the scatter plot graph.
 
 ### Dependencies
 
-Including development dependencies.
+Tools installed as dependencies includes development dependencies.
 
 | Package                                               | Description |
 | ----------------------------------------------------- | ----------- |
