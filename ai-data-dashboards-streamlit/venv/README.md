@@ -16,14 +16,6 @@ Scatter plot: this visualisation graph is very interactive. Click and drag the g
 
 Filtering tables: when you hover over a row, it will be highlighted in light grey colour for accessibility. Click on a heading to filter/sort the data column.
 
-### Skills
-
-1. Python Programming
-2. AI Software Development
-3. Data Analysis
-4. Artificial Intelligence (AI)
-5. Data Modeling
-
 ## Requirements
 
 1. Install Python 3.12
