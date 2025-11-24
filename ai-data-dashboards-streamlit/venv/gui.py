@@ -40,7 +40,7 @@ x_axis = st.sidebar.selectbox("X-axis feature:", options=iris.feature_names, ind
 y_axis = st.sidebar.selectbox("Y-axis feature:", options=iris.feature_names, index=1)
 
 #Add chat widget on main page
-st.subheader("Ask a question about the different species from the below tables and graph")
+st.subheader("AI Chatbot: Ask a question about the different species from the below tables and graph")
 #Determine if chat history exists in the session state and initialize if it doesn't
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
