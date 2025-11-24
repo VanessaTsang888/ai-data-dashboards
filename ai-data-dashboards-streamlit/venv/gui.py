@@ -23,7 +23,7 @@ client = OpenAI(api_key=my_api_key)
 st.set_page_config(page_title="Iris Dashboard", layout="wide")
 
 #Write title
-st.title("Error Handling")
+st.title("Species – Data Visualisation Dashboard")
 
 #Load Iris dataset
 iris = load_iris()
@@ -40,7 +40,7 @@ x_axis = st.sidebar.selectbox("X-axis feature:", options=iris.feature_names, ind
 y_axis = st.sidebar.selectbox("Y-axis feature:", options=iris.feature_names, index=1)
 
 #Add chat widget on main page
-st.subheader("Ask a question about the Iris dataset")
+st.subheader("Ask a question about the different species from the below tables and graph")
 #Determine if chat history exists in the session state and initialize if it doesn't
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -114,9 +114,9 @@ if st.button("Send", key="ui_send"):
 
                 except Exception as exec_err:
                     # Display error message if an error occurs during code execution
-                    st.error(f"Error executing code: {exec_err}")
+                    st.error(f"Error executing code on: {exec_err}. Please try again")
                     # Add code execution error to chat history
-                    st.session_state.chat_history.append({"role": "assistant", "content": f"Execution error: {exec_err}"})
+                    st.session_state.chat_history.append({"role": "assistant", "content": f"Execution error on: {exec_err}. Please try again"})
 
             else:
                 # Display result
