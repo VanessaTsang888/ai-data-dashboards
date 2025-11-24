@@ -14,30 +14,7 @@ Sample Data: I am using the 'Iris Dataset' as it contains different data values,
 
 Scatter plot: This visualisation graph (chart) is very interactive. Click and drag the graph to pan in and out. To zoom in and to, use the scroll ball on your mouse. Hover your cursor over a plot to activate the tooltip feature. Each species is colour coded - see the 'Key' on the right side of the graph.
 
-Filtering tables: For accessibility, when you hover over a row, it will be highlighted in light grey colour. Click on a 'heading' to filter/sort the data column.
-
-Left sidebar Filter Options: Use these filter options to speed up in sourcing particular data on a specific specie. For example, you may wish to visualise data for the 'virginica' specie and only the sepal width and the petal length in centermeters.
-
-## How to use the AI Chatbot
-
-First take a look at the data within filtering table and the scatter plot graph. Then to find the data you require faster, use the AI Chatbot by asking the bot your question(s). Examples of questions are as follows:
-
-- Q1) "Show the first 6 rows where the setosa width is below 5 cm".
-  The bot will respond (the answer) with the answer in Python code (Generated Python Code), and also a respond with a filtering table containing the data the user have asked for.
-- Q2) "Show the first 10 rows where the revenue column is below 4".
-  We get an **_error msg_** as expected because revenue is not within the subject of 'species', and not within the Iris Dataset that is based on the subject of 'species'.
-
-  ### Handle Errors and provide User Feedback
-
-  Whilst programming the an AI Chatbot to work as expected on my data dashboard, I have written Python code to handle possible errors in order to provide users with feedback when they have requested data that do not exist in this application. This helps improve the user-centric experience on this application. Part of software development best practice is to ensure we catch any possible errors and provide user feedback.
-
-## Skills
-
-1. Python Programming
-2. AI Software Development
-3. Data Analysis
-4. Artificial Intelligence (AI)
-5. Data Modeling
+Filtering tables: when you hover over a row, it will be highlighted in light grey colour for accessibility. Click on a heading to filter/sort the data column.
 
 ## Requirements
 
